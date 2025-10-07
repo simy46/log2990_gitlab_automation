@@ -1,9 +1,9 @@
 import requests
-from utils.consts import GITLAB_BASE_URL, HEADERS
+from utils.consts import GITLAB_BASE_URL, HEADERS, COURSE_CODE, SESSION
 
 
-def get_projects(prefix: str):
-    group_path = "polytechnique-montr-al/log2990/20253"
+def get_projects(prefix: str): # should probably cache to improv performance
+    group_path = f"polytechnique-montr-al/{COURSE_CODE}/{SESSION}"
     group_url = f"{GITLAB_BASE_URL}/groups/{requests.utils.quote(group_path, safe='')}"
     group_resp = requests.get(group_url, headers=HEADERS)
     group_resp.raise_for_status()
@@ -23,7 +23,7 @@ def get_projects(prefix: str):
 
         for p in data:
             name = p["name"]
-            if name.startswith(f"LOG2990-{prefix}"):
+            if name.startswith(f"{COURSE_CODE}-{prefix}"):
                 projects[name] = p["id"]
 
         next_page = r.headers.get("X-Next-Page")

@@ -40,6 +40,6 @@ def check_mr_approvals(project_name: str, project_id: int):
 
         if no_approval_count > 0 and percentage_no_approval > 50.0: # majoritairement
             mr_list_str = ", ".join(no_approval_mrs)
-            print(f"    _-0,25 les MR fusionnées ne sont pas majoritairement approuvées ({mr_list_str})")
+            print(f"    _-0,25 les MR fusionnées ne sont pas majoritairement approuvées ({mr_list_str}). Astuce: Assignez des approvals minimales par défaut (préférablement au moins 2 reviewers).")
         else:
             print("    _Ok.")

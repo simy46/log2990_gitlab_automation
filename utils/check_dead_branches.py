@@ -1,6 +1,6 @@
 import requests
 from datetime import datetime, timedelta
-from utils.consts import GITLAB_BASE_URL, HEADERS
+from utils.consts import GITLAB_BASE_URL, HEADERS, MAIN_BRANCHES
 
 def check_dead_branch(project_name: str, project_id: int, weeks: int = 3):
     print(f"\n 8.3. [{project_name}] Vérification des branches mortes")
@@ -29,7 +29,7 @@ def check_dead_branch(project_name: str, project_id: int, weeks: int = 3):
             branch_name = b["name"]
             total_branches += 1
 
-            if branch_name in ("main", "master", "dev"):
+            if branch_name in MAIN_BRANCHES:
                 continue
 
             committed_date_str = b["commit"]["committed_date"]

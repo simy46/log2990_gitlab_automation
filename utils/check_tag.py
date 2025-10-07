@@ -33,11 +33,11 @@ def check_tag(project_name: str, project_id: int, sprint: str, expected_commit: 
         print(f"    _-1 Absence du tag \"{expected_tag}\"")
 
         if tags:
-            print("    _Tags existants dans le projet :")
+            print("        _Tags existants dans le projet :")
             for t in tags:
-                print(f"    _- {t['name']} → {t['commit']['id']}")
+                print(f"            _- {t['name']} → {t['commit']['id']}")
         else:
-            print("    _(Aucun tag dans le projet)")
+            print("            _(Aucun tag dans le projet)")
         return
 
     print(f"    _Tag trouvé : {exact_match} → {exact_sha}")

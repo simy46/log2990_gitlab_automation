@@ -46,6 +46,6 @@ def check_issues(project_name: str, project_id: int):
         nb_open = len(issues_open)
         penalty = min(nb_open * 0.1, 0.5)
         issues_str = ", ".join(issues_open)
-        print(f"    _-{penalty:.1f} certains issues du sprint sont encore dans la colonne initiale \"open\" ({issues_str})")
+        print(f"    _-{penalty:.1f} certains issues du sprint sont encore dans la colonne initiale \"open\" ({issues_str}). Astuce: Créez des issues board nommées à partir des sprints. Peuvent être personnalisés selon vos issues.")
     else:
         print("    _Aucune issue dans la colonne \"Open\".")

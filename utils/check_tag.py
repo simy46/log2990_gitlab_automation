@@ -11,7 +11,7 @@ def check_tag(project_name: str, project_id: int, sprint: str, expected_commit: 
     )
 
     if r.status_code != 200:
-        print(f"[{project_name}] Erreur lors de la récupération des tags : {r.text}")
+        print(f"    [{project_name}] Erreur lors de la récupération des tags : {r.text}")
         return
 
     tags = r.json()
@@ -27,23 +27,22 @@ def check_tag(project_name: str, project_id: int, sprint: str, expected_commit: 
             exact_sha = tag_sha
             break
 
-    print("\n-------------------------------------------------------------------------------------------|")
-    print(f"[{project_name}] Vérification des tags pour {expected_tag}\n")
+    print(f"\n 8.1. [{project_name}] Vérification des tags pour {expected_tag}")
 
     if not exact_match:
-        print(f"-1 Absence du tag \"{expected_tag}\"")
+        print(f"    _-1 Absence du tag \"{expected_tag}\"")
 
         if tags:
-            print("Tags existants dans le projet :")
+            print("    _Tags existants dans le projet :")
             for t in tags:
-                print(f"  - {t['name']} → {t['commit']['id']}")
+                print(f"    _- {t['name']} → {t['commit']['id']}")
         else:
-            print("(Aucun tag dans le projet)")
+            print("    _(Aucun tag dans le projet)")
         return
 
-    print(f"Tag trouvé : {exact_match} → {exact_sha}")
+    print(f"    _Tag trouvé : {exact_match} → {exact_sha}")
 
     if expected_commit and expected_commit != exact_sha:
-        print(f"-1 Tag de déploiement \"{exact_match}\" pas sur le même commit que la remise")
+        print(f"    _-1 Tag de déploiement \"{exact_match}\" pas sur le même commit que la remise")
     else:
-        print("Ok.")
+        print("    _Ok.")

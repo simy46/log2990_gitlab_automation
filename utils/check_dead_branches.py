@@ -3,8 +3,7 @@ from datetime import datetime, timedelta
 from utils.consts import GITLAB_BASE_URL, HEADERS
 
 def check_dead_branch(project_name: str, project_id: int, weeks: int = 3):
-    print("\n-------------------------------------------------------------------------------------------|")
-    print(f"[{project_name}] Vérification des branches mortes\n")
+    print(f"\n 8.3. [{project_name}] Vérification des branches mortes")
 
     cutoff_date = datetime.utcnow() - timedelta(weeks=weeks)
     stale_branches = []
@@ -19,7 +18,7 @@ def check_dead_branch(project_name: str, project_id: int, weeks: int = 3):
         )
 
         if r.status_code != 200:
-            print(f"Erreur lors de la récupération des branches : {r.text}")
+            print(f"    -Erreur lors de la récupération des branches : {r.text}")
             return
 
         branches = r.json()
@@ -46,10 +45,10 @@ def check_dead_branch(project_name: str, project_id: int, weeks: int = 3):
             break
         page = int(next_page)
 
-    print(f"Nombre total de branches : {total_branches}")
+    print(f"    _Nombre total de branches : {total_branches}")
 
     if stale_branches:
         branches_str = ", ".join(stale_branches)
-        print(f"-1 présence de branche morte [{branches_str}]")
+        print(f"    _-1 présence de branche morte [{branches_str}]")
     else:
-        print("Aucune branche morte détectée.")
+        print("    _Aucune branche morte détectée.")

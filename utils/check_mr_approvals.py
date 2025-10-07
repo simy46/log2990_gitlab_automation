@@ -38,8 +38,8 @@ def check_mr_approvals(project_name: str, project_id: int):
         percentage_no_approval = (no_approval_count / total_mrs) * 100
         print(f"\n    {no_approval_count}/{total_mrs} MR(s) sans approbation ({percentage_no_approval:.1f}%)")
 
-        if no_approval_count > 0 and percentage_no_approval > 50.0: # majoritairement
+        if no_approval_count > 1: # si au moins deux MR fusionnées n'a pas été approuvées
             mr_list_str = ", ".join(no_approval_mrs)
-            print(f"    _-0,25 les MR fusionnées ne sont pas majoritairement approuvées ({mr_list_str}). Astuce: Assignez des approvals minimales par défaut (préférablement au moins 2 reviewers).")
+            print(f"    _-0,25 les MR fusionnées ne sont pas majoritairement approuvées ({mr_list_str}). Astuce: Assignez un nombre minimal d'approvals par défaut (préférablement au moins 2 reviewers).")
         else:
             print("    _Ok.")

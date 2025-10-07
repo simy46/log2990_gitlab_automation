@@ -1,3 +1,4 @@
+from utils.check_mr_on_small_branches import check_mr_on_small_branches
 from utils.get_choice import get_choice
 from utils.get_projects import get_projects
 from utils.check_mr_approvals import check_mr_approvals
@@ -9,3 +10,4 @@ if __name__ == "__main__":
 
     for project_name, project_id in PROJECTS.items():
         check_mr_approvals(project_name, project_id)
+        check_mr_on_small_branches(project_name, project_id)

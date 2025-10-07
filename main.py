@@ -1,3 +1,4 @@
+from utils.check_mr_on_small_branches import check_mr_on_small_branches
 from utils.get_choice import get_choice
 from utils.get_sprint import get_sprint
 from utils.get_projects import get_projects
@@ -27,6 +28,7 @@ if __name__ == "__main__":
             check_commits(project_name, project_id)
             check_dead_branch(project_name, project_id)
             check_mr_approvals(project_name, project_id)
+            check_mr_on_small_branches(project_name, project_id)
             check_issues(project_name, project_id)
             check_useless_files(project_name, project_id)
 

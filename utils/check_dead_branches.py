@@ -51,4 +51,4 @@ def check_dead_branch(project_name: str, project_id: int, weeks: int = 3):
         branches_str = ", ".join(stale_branches)
         print(f"    _-1 présence de branche morte [{branches_str}]")
     else:
-        print("    _Aucune branche morte détectée.")
+        print("    _Ok.")

@@ -38,4 +38,4 @@ def check_useless_files(project_name: str, project_id: int):
         print(f"    _-0,25 Présence de plusieurs dossiers serveurs : {', '.join(present_servers)}")
 
     if penalty_count == 0:
-        print("    _Aucun fichier inutile détecté.")
+        print("    _Ok.")

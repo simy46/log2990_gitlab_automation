@@ -32,6 +32,10 @@ if __name__ == "__main__":
             check_issues(project_name, project_id)
             check_useless_files(project_name, project_id)
 
+        print("\n===========================================================================================|")
+        print(f"FIN DE LA CORRECTION POUR LE GROUPE {choice}")
+        print("===========================================================================================|")
+
     except Exception as e:
         print(f"\n{e}")
         print("Tu as surement oublié de set le GITLAB_TOKEN dans /utils/consts.py")

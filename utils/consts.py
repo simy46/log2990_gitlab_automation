@@ -1,6 +1,6 @@
 GITLAB_BASE_URL = "https://gitlab.com/api/v4"
 
-GITLAB_TOKEN = "glpat-wIoEvkhKuRZoQqZx7mtfim86MQp1OmRqY2piCw.01.120wk91s7" # check readme 
+GITLAB_TOKEN = "dont push you secret key" # check readme 
 HEADERS = {"PRIVATE-TOKEN": GITLAB_TOKEN} 
 
 COURSE_CODE = "LOG2990"

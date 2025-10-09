@@ -43,7 +43,7 @@ def check_mr_on_small_branches(project_name: str, project_id: int):
 
     print(f"    _Ratio MR vers petites branches : {ratio_small:.1%}")
 
-    if ratio_small > 0.5:
+    if ratio_small > 0.25:
         print("    _-0,25 les MR sont utilisées majoritairement entre petites branches. Astuce : git merge <branch-name> pour fusionner sous-branches entre elles, et MR uniquement pour fusionner vers la branche principale.")
     else:
         print("    _Ok.")

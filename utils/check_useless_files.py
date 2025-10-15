@@ -1,14 +1,6 @@
 import requests
-from utils.consts import GITLAB_BASE_URL, HEADERS
+from utils.consts import GITLAB_BASE_URL, HEADERS, SERVER_DIRS, UNWANTED_ROOT
 
-UNWANTED_ROOT = {
-    "node_modules",
-    "coverage",
-    "package.json",
-    "yarn.lock",
-}
-
-SERVER_DIRS = {"server", "server-nest", "serveur"}
 
 def check_useless_files(project_name: str, project_id: int):
     print(f"\n 8.5. [{project_name}] Vérification des fichiers inutiles")

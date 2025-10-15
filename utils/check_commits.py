@@ -1,8 +1,7 @@
 import os
 import requests
-from utils.consts import GITLAB_BASE_URL, HEADERS
+from utils.consts import GITLAB_BASE_URL, HEADERS, OUTPUT_DIR
 
-OUTPUT_DIR = "commits"
 
 def check_commits(project_name: str, project_id: int):
     os.makedirs(OUTPUT_DIR, exist_ok=True)

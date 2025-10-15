@@ -8,7 +8,7 @@ https://gitlab.com/-/user_settings/personal_access_tokens?page=1&state=active&so
 
 copy token on `/utils/consts.py` to the variable `GITLAB_TOKEN`
 
-you can now run with `python main.py` or `python 8_X.py` to run all the script or run each one separately. i suggest running each script one by one because it only prints messages on console.
+you can now run with `python main.py` or `python 8_X.py` to run all the script or run each one separately. i suggest running main.py
 
 **Note** : 
 - 8_2 is not here as it cannot be scripted/ automated (commits in different languages)

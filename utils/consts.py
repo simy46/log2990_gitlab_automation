@@ -20,3 +20,6 @@ UNWANTED_ROOT = {
     "yarn.lock",
 }
 SERVER_DIRS = {"server", "server-nest", "serveur"}
+
+# deploy tag prefix
+DEPLOY_PREFIX = "deploy_v"

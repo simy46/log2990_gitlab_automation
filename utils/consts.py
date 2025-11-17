@@ -22,4 +22,4 @@ UNWANTED_ROOT = {
 SERVER_DIRS = {"server", "server-nest", "serveur"}
 
 # deploy tag prefix
-DEPLOY_PREFIXS = "deploy"
+DEPLOY_PREFIX = "deploy"
